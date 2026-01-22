@@ -1,0 +1,9 @@
+- basic GUI
+- possibility to create private and public rooms
+- being able to create, delete, customise your account like baners, pfp, announcments
+- sending a bip (ping in dc)
+- events
+- reactions like emojis, gifs,
+- MUST be markdown
+- being able to ignore or block users that are annoying
+- dark and light mode
