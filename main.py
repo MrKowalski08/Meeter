@@ -19,11 +19,17 @@ class Main:
         self.chat = tk.Text(self.frame)
         self.chat.see("end")
         self.chat.config(state="disabled")
-        self.sent_msg = tk.Button(self.frame, text="sent")
-        self.sent_msg.configure(width=10)
+        self.chat.configure(bg="#CCCCCC")
+
+        self.user_config_btn = tk.Button(self.frame, text="user")
+        self.user_config_btn.configure(width=10, bg="#5774a0",fg="#ffffff")
+
         self.input_msg = tk.Entry(self.frame)
         self.input_msg.bind("<Return>", lambda e: self.send_message())
+
         self.rooms = tk.Listbox(self.frame)
+        self.rooms.configure(bg="#DDDDDD")
+
         self.chat_scrollbar = tk.Scrollbar(self.frame)
         self.rooms_scrollbar = tk.Scrollbar(self.frame)
         self.chat.config(yscrollcommand=self.chat_scrollbar.set)
@@ -32,11 +38,11 @@ class Main:
     def run(self):
         self.frame.grid(sticky="nsew")
         self.chat_scrollbar.grid(row=0, column=2, sticky="nes")
-        self.rooms_scrollbar.grid(row=0, column=0, rowspan=2, sticky="nes")
-        self.rooms.grid(row=0,column=0,rowspan=2,sticky="nsw")
-        self.chat.grid(row=0,column=1,columnspan=2,sticky="nsew")
-        self.input_msg.grid(row=1,column=1,sticky="new")
-        self.sent_msg.grid(row=1,column=2,sticky="n")
+        self.rooms_scrollbar.grid(row=0, column=0, sticky="nes")
+        self.rooms.grid(row=0,column=0,sticky="nsw")
+        self.chat.grid(row=0,column=1,sticky="nsew")
+        self.input_msg.grid(row=1,column=1,sticky="nsew")
+        self.user_config_btn.grid(row=1,column=0,sticky="new")
 
         self.root.mainloop()
 
